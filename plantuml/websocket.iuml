@@ -1,0 +1,11 @@
+@startuml
+
+client --> server 
+
+client <-- server: Handshake (HTTP Upgrade)
+
+client <--> server: Bidirectional Messages
+
+client <--> server: One side closes channel
+
+@enduml

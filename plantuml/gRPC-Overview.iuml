@@ -1,0 +1,20 @@
+@startuml
+
+
+frame "Java Service" {
+    component "gRPC Server" as server 
+}
+
+frame "Android-Kotlin Client" {
+    component "gRPC Stub" as stubAndroid 
+}
+
+frame ".NET Client" {
+    component "gRPC Stub" as stubNet
+}
+
+stubAndroid --> server: Proto Request 
+stubNet --> server: Proto Request
+server --> stubAndroid: Proto Response
+server --> stubNet: Proto Response
+@enduml
